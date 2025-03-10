@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weather Map</title>
+</head>
+<body>
+    <h1>Weather Data Grid</h1>
+    {% include "maps/map_render.html" %}
+
+    <h2>Weather Data</h2>
+    <table border="1">
+        <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Temperature (°C)</th>
+            <th>Description</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for data in weather_data %}
+        <tr>
+            <td>{{ data.latitude }}</td>
+            <td>{{ data.longitude }}</td>
+            <td>{{ data.temperature }}</td>
+            <td>{{ data.description }}</td>
+            <td>{{ data.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
